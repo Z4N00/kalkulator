@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f6f8;
+  color: #222;
+}
+
+header {
+  background: linear-gradient(135deg, #ff7a00, #f4b400);
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+header h1 {
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 18px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.menu button {
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: white;
+  color: #ff7a00;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.container {
+  padding: 0 18px 25px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.hidden {
+  display: none;
+}
+
+h2 {
+  color: #ff7a00;
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.card button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #ff7a00;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.hasil {
+  margin-top: 18px;
+  padding: 15px;
+  background: #fff4e6;
+  border-left: 5px solid #ff7a00;
+  border-radius: 12px;
+  line-height: 1.7;
+  font-size: 15px;
+}

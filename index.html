@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Usaha Kecil SE2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Kalkulator perhitungan Usaha dan tanah SE2026</h1>
+        <p> Kec : Ile Ape & Ile Ape Timur</p>
+    </header>
+
+    <div class="menu">
+        <button onclick="bukaMenu('jagung')">🌽 Hitung Jagung</button>
+        <button onclick="bukaMenu('tanah')">🌍 Hitung Tanah</button>
+        <button onclick="bukaMenu('makanan')">🍜 Hitung Makanan</button>
+        <button onclick="bukaMenu('ternak')">🐷 Hitung Ternak</button>
+    </div>
+
+    <main class="container">
+
+        <section id="jagung" class="card">
+            <h2>🌽 Kalkulator Jagung</h2>
+
+            <label>Jenis Jagung</label>
+            <select id="jenisJagung">
+                <option value="10000">Jagung Pulut - Rp10.000/kg</option>
+                <option value="4500">Jagung Hibrida - Rp4.500/kg</option>
+            </select>
+
+           <label>Jumlah Karung Jagung Belum Dipipil</label>
+
+<div style="display:flex; align-items:center;">
+    <input type="number" id="jumlahKarung" placeholder="Contoh: 1"
+        style="border-radius:12px 0 0 12px;">
+
+    <span style="
+        padding:13px 15px;
+        background:#f0f0f0;
+        border:1px solid #ddd;
+        border-left:none;
+        border-radius:0 12px 12px 0;
+        font-weight:bold;
+    ">
+        Karung
+    </span>
+</div>
+
+            <label>Estimasi Jagung Pipilan per Karung</label>
+
+            <div style="display:flex; align-items:center;">
+                <input type="number" id="kgPerKarung" value="25" style="border-radius:12px 0 0 12px;">
+
+                <span style="
+        padding:13px 15px;
+        background:#f0f0f0;
+        border:1px solid #ddd;
+        border-left:none;
+        border-radius:0 12px 12px 0;
+        font-weight:bold;
+    ">
+                    Kg
+                </span>
+            </div>
+
+            <label>Harga per Kg</label>
+            <input type="number" id="hargaKg" value="10000">
+
+            <button onclick="hitungJagung()">Hitung Jagung</button>
+            <div id="hasilJagung" class="hasil">Hasil jagung muncul di sini.</div>
+        </section>
+
+        <section id="tanah" class="card hidden">
+            <h2>🌍 Kalkulator Tanah</h2>
+
+            <label>Jenis Lokasi Tanah</label>
+            <select id="jenisTanah">
+                <option value="60000">Tanah Kebun - Rp60.000/m²</option>
+                <option value="100000">Tempat Strategis / Dekat Kota / Dekat Jalan - Rp100.000/m²</option>
+            </select>
+
+            <label>Cara Input Luas</label>
+            <select id="caraLuas" onchange="ubahCaraLuas()">
+                <option value="langsung">Langsung isi luas meter²</option>
+                <option value="perkalian">Pakai panjang × lebar</option>
+            </select>
+
+            <div id="inputLangsung">
+                <label>Luas Tanah</label>
+                <input type="number" id="luasTanah" placeholder="Contoh: 100">
+            </div>
+
+            <div id="inputPerkalian" class="hidden">
+                <label>Panjang meter Tanah </label>
+                <input type="number" id="panjangTanah" placeholder="Contoh: 20">
+
+                <label>Lebar meter Tanah</label>
+                <input type="number" id="lebarTanah" placeholder="Contoh: 10">
+            </div>
+
+            <label>Harga per Meter²</label>
+            <input type="number" id="hargaTanah" value="60000">
+
+            <button onclick="hitungTanah()">Hitung Tanah</button>
+            <div id="hasilTanah" class="hasil">Hasil tanah muncul di sini.</div>
+        </section>
+
+        <section id="makanan" class="card hidden">
+            <h2>🍚 Kalkulator Makanan (Hanya Beras) 1 Minggu</h2>
+
+            <label>Jumlah Anggota Keluarga</label>
+            <input type="number" id="jumlahOrang" placeholder="Contoh: 5">
+
+            <label>Konsumsi Beras per Orang per Hari (kg)</label>
+            <input type="number" id="berasPerOrang" value="0.3" step="0.1">
+
+            <label>Harga Beras per Kg</label>
+            <select id="hargaBeras">
+                <option value="14000">Beras Rp14.000/kg</option>
+                <option value="15000">Beras Rp15.000/kg</option>
+                <option value="16000">Beras Rp16.000/kg</option>
+            </select>
+
+            <button onclick="hitungMakanan()">Hitung Makanan</button>
+
+            <div id="hasilMakanan" class="hasil">
+                Hasil makanan muncul di sini.
+            </div>
+        </section>
+
+
+        <section id="ternak" class="card hidden">
+            <h2>🐷 Kalkulator Ternak</h2>
+            <p>Menu ini belum dibuat. Nanti kita isi babi, sapi, kambing.</p>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
