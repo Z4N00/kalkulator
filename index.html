@@ -33,13 +33,12 @@
                 <option value="4500">Jagung Hibrida - Rp4.500/kg</option>
             </select>
 
-           <label>Jumlah Karung Jagung Belum Dipipil</label>
+            <label>Jumlah Karung Jagung Belum Dipipil</label>
 
-<div style="display:flex; align-items:center;">
-    <input type="number" id="jumlahKarung" placeholder="Contoh: 1"
-        style="border-radius:12px 0 0 12px;">
+            <div style="display:flex; align-items:center;">
+                <input type="number" id="jumlahKarung" placeholder="Contoh: 1" style="border-radius:12px 0 0 12px;">
 
-    <span style="
+                <span style="
         padding:13px 15px;
         background:#f0f0f0;
         border:1px solid #ddd;
@@ -47,9 +46,9 @@
         border-radius:0 12px 12px 0;
         font-weight:bold;
     ">
-        Karung
-    </span>
-</div>
+                    Karung
+                </span>
+            </div>
 
             <label>Estimasi Jagung Pipilan per Karung</label>
 
@@ -92,19 +91,74 @@
 
             <div id="inputLangsung">
                 <label>Luas Tanah</label>
-                <input type="number" id="luasTanah" placeholder="Contoh: 100">
+
+                <div style="display:flex; align-items:center;">
+                    <input type="number" id="luasTanah" placeholder="Contoh: 100" style="border-radius:12px 0 0 12px;">
+
+                    <span style="
+            padding:13px 15px;
+            background:#f0f0f0;
+            border:1px solid #ddd;
+            border-left:none;
+            border-radius:0 12px 12px 0;
+            font-weight:bold;
+        ">
+                        m²
+                    </span>
+                </div>
             </div>
 
             <div id="inputPerkalian" class="hidden">
                 <label>Panjang meter Tanah </label>
-                <input type="number" id="panjangTanah" placeholder="Contoh: 20">
+                <div style="display:flex; align-items:center;">
+                    <input type="number" id="panjangTanah" placeholder="Contoh: 20"
+                        style="border-radius:12px 0 0 12px;">
 
+                    <span style="
+        padding:13px 15px;
+        background:#f0f0f0;
+        border:1px solid #ddd;
+        border-left:none;
+        border-radius:0 12px 12px 0;
+        font-weight:bold;
+    ">
+                        Meter
+                    </span>
+                </div>
                 <label>Lebar meter Tanah</label>
-                <input type="number" id="lebarTanah" placeholder="Contoh: 10">
+                <div style="display:flex; align-items:center;">
+                    <input type="number" id="lebarTanah" placeholder="Contoh: 10" style="border-radius:12px 0 0 12px;">
+
+                    <span style="
+        padding:13px 15px;
+        background:#f0f0f0;
+        border:1px solid #ddd;
+        border-left:none;
+        border-radius:0 12px 12px 0;
+        font-weight:bold;
+    ">
+                        Meter
+                    </span>
+                </div>
             </div>
 
             <label>Harga per Meter²</label>
-            <input type="number" id="hargaTanah" value="60000">
+            <label>Harga per Meter²</label>
+
+            <div style="display:flex; align-items:center;">
+                <input type="number" id="hargaTanah" value="60000" style="border-radius:12px 0 0 12px;">
+
+                <span style="
+        padding:13px 15px;
+        background:#f0f0f0;
+        border:1px solid #ddd;
+        border-left:none;
+        border-radius:0 12px 12px 0;
+        font-weight:bold;
+    ">
+                    Rp
+                </span>
+            </div>
 
             <button onclick="hitungTanah()">Hitung Tanah</button>
             <div id="hasilTanah" class="hasil">Hasil tanah muncul di sini.</div>
@@ -136,7 +190,7 @@
 
         <section id="ternak" class="card hidden">
             <h2>🐷 Kalkulator Ternak</h2>
-            <p>Menu ini belum dibuat Karena tidak kuat mete lagi ;) .</p>
+            <p>Menu ini belum dibuat. Nanti kita isi babi, sapi, kambing.</p>
         </section>
 
     </main>
