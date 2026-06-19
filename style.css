@@ -8,7 +8,6 @@
 body {
   color: #222;
   min-height: 100vh;
-
   background-image: url('latar1.jpg');
   background-size: cover;
   background-position: center;
@@ -16,21 +15,50 @@ body {
   background-attachment: fixed;
 }
 
+/* Lapisan gelap tipis agar teks jelas */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: -1;
+}
+
+/* HEADER */
 header {
-  background: rgba(255, 122, 0, 0.9);
+  background: rgba(255, 122, 0, 0.92);
   color: white;
   text-align: center;
-  padding: 25px 15px;
+  padding: 20px 15px;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 5px 18px rgba(0,0,0,0.25);
 }
 
 header h1 {
-  font-size: 25px;
-  margin-bottom: 8px;
+  font-size: 23px;
+  margin-bottom: 12px;
+  line-height: 1.35;
 }
 
+.info-header {
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 14px;
+  padding: 11px 12px;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0 auto 12px;
+  max-width: 550px;
+}
+
+.wilayah {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* MENU */
 .menu {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -41,15 +69,17 @@ header h1 {
 }
 
 .menu button {
-  padding: 14px;
+  padding: 14px 10px;
   border: none;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   color: #ff7a00;
   font-weight: bold;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.18);
+  font-size: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   cursor: pointer;
   backdrop-filter: blur(5px);
+  transition: 0.25s ease;
 }
 
 .menu button:hover {
@@ -57,18 +87,20 @@ header h1 {
   color: white;
 }
 
+/* CONTAINER */
 .container {
-  padding: 0 18px 25px;
+  padding: 0 18px 30px;
   max-width: 600px;
   margin: auto;
 }
 
+/* CARD */
 .card {
-  background: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.96);
   padding: 20px;
   border-radius: 18px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  backdrop-filter: blur(5px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
 }
 
 .hidden {
@@ -78,6 +110,8 @@ header h1 {
 h2 {
   color: #ff7a00;
   margin-bottom: 15px;
+  font-size: 21px;
+  line-height: 1.3;
 }
 
 label {
@@ -96,8 +130,38 @@ select {
   border-radius: 12px;
   font-size: 16px;
   background: white;
+  outline: none;
 }
 
+input:focus,
+select:focus {
+  border-color: #ff7a00;
+  box-shadow: 0 0 0 3px rgba(255,122,0,0.15);
+}
+
+/* INPUT DENGAN SATUAN */
+.input-satuan {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-satuan input {
+  border-radius: 12px 0 0 12px;
+}
+
+.input-satuan span {
+  padding: 13px 14px;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-radius: 0 12px 12px 0;
+  font-weight: bold;
+  white-space: nowrap;
+  color: #333;
+}
+
+/* BUTTON DALAM CARD */
 .card button {
   width: 100%;
   margin-top: 18px;
@@ -109,18 +173,93 @@ select {
   font-size: 17px;
   font-weight: bold;
   cursor: pointer;
+  transition: 0.25s ease;
 }
 
 .card button:hover {
   background: #e66d00;
 }
 
+/* HASIL */
 .hasil {
   margin-top: 18px;
   padding: 15px;
-  background: rgba(255, 244, 230, 0.95);
+  background: rgba(255, 244, 230, 0.96);
   border-left: 5px solid #ff7a00;
   border-radius: 12px;
   line-height: 1.7;
   font-size: 15px;
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 480px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  header {
+    padding: 18px 12px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  .info-header {
+    font-size: 12.5px;
+    line-height: 1.55;
+    padding: 10px;
+  }
+
+  .wilayah {
+    font-size: 13px;
+  }
+
+  .menu {
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .menu button {
+    font-size: 13.5px;
+    padding: 12px 8px;
+  }
+
+  .container {
+    padding: 0 15px 25px;
+  }
+
+  .card {
+    padding: 17px;
+    border-radius: 16px;
+  }
+
+  h2 {
+    font-size: 19px;
+  }
+
+  label {
+    font-size: 13.5px;
+  }
+
+  input,
+  select {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .input-satuan span {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .card button {
+    font-size: 15px;
+  }
+
+  .hasil {
+    font-size: 14px;
+  }
 }
