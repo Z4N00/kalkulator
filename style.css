@@ -8,23 +8,25 @@
 body {
   color: #222;
   min-height: 100vh;
+
   background-image: url('latar1.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-/* Lapisan gelap tipis agar teks jelas */
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.25);
   z-index: -1;
 }
 
-/* HEADER */
 header {
   background: rgba(255, 122, 0, 0.92);
   color: white;
@@ -58,7 +60,6 @@ header h1 {
   font-weight: bold;
 }
 
-/* MENU */
 .menu {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -72,7 +73,7 @@ header h1 {
   padding: 14px 10px;
   border: none;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255,255,255,0.96);
   color: #ff7a00;
   font-weight: bold;
   font-size: 15px;
@@ -87,14 +88,12 @@ header h1 {
   color: white;
 }
 
-/* CONTAINER */
 .container {
   padding: 0 18px 30px;
   max-width: 600px;
   margin: auto;
 }
 
-/* CARD */
 .card {
   background: rgba(255,255,255,0.96);
   padding: 20px;
@@ -139,7 +138,6 @@ select:focus {
   box-shadow: 0 0 0 3px rgba(255,122,0,0.15);
 }
 
-/* INPUT DENGAN SATUAN */
 .input-satuan {
   display: flex;
   align-items: center;
@@ -161,7 +159,6 @@ select:focus {
   color: #333;
 }
 
-/* BUTTON DALAM CARD */
 .card button {
   width: 100%;
   margin-top: 18px;
@@ -180,21 +177,45 @@ select:focus {
   background: #e66d00;
 }
 
-/* HASIL */
 .hasil {
   margin-top: 18px;
   padding: 15px;
-  background: rgba(255, 244, 230, 0.96);
+  background: rgba(255,244,230,0.96);
   border-left: 5px solid #ff7a00;
   border-radius: 12px;
   line-height: 1.7;
   font-size: 15px;
 }
 
-/* RESPONSIVE HP */
+.loading {
+  display: inline-block;
+  color: #ff7a00;
+  font-weight: bold;
+  animation: kedip 1s infinite;
+}
+
+@keyframes kedip {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 480px) {
+
   body {
-    background-attachment: scroll;
+    background-image: url('latar1.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 
   header {
