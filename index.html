@@ -4,21 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Usaha Dan Aset Tanah  SE2026</title>
+    <title>Kalkulator Usaha Kecil SE2026</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header>
-        <h1>Kalkulator perhitungan Usaha dan tanah SE2026</h1>
-        <p> Kec : Ile Ape & Ile Ape Timur</p>
+        <h1>📊 Kalkulator SE2026</h1>
+
+        <div class="info-header">
+            Kalkulator ini dibuat untuk membantu petugas dalam menghitung nilai usaha,
+            produksi, konsumsi makanan, maupun nilai tanah apabila responden tidak
+            mengetahui, lupa, atau mengalami kesulitan dalam memberikan perkiraan
+            saat wawancara Sensus Ekonomi 2026.
+        </div>
+
+        <p class="wilayah">📍 Kecamatan Ile Ape & Ile Ape Timur</p>
     </header>
 
     <div class="menu">
         <button onclick="bukaMenu('jagung')">🌽 Hitung Jagung</button>
         <button onclick="bukaMenu('tanah')">🌍 Hitung Tanah</button>
-        <button onclick="bukaMenu('makanan')">🍜 Hitung Makanan</button>
+        <button onclick="bukaMenu('makanan')">🍚 Hitung Makanan</button>
         <button onclick="bukaMenu('ternak')">🐷 Hitung Ternak</button>
     </div>
 
@@ -34,41 +42,22 @@
             </select>
 
             <label>Jumlah Karung Jagung Belum Dipipil</label>
-
-            <div style="display:flex; align-items:center;">
-                <input type="number" id="jumlahKarung" placeholder="Contoh: 1" style="border-radius:12px 0 0 12px;">
-
-                <span style="
-        padding:13px 15px;
-        background:#f0f0f0;
-        border:1px solid #ddd;
-        border-left:none;
-        border-radius:0 12px 12px 0;
-        font-weight:bold;
-    ">
-                    Karung
-                </span>
+            <div class="input-satuan">
+                <input type="number" id="jumlahKarung" placeholder="Contoh: 1">
+                <span>Karung</span>
             </div>
 
             <label>Estimasi Jagung Pipilan per Karung</label>
-
-            <div style="display:flex; align-items:center;">
-                <input type="number" id="kgPerKarung" value="20" style="border-radius:12px 0 0 12px;">
-
-                <span style="
-        padding:13px 15px;
-        background:#f0f0f0;
-        border:1px solid #ddd;
-        border-left:none;
-        border-radius:0 12px 12px 0;
-        font-weight:bold;
-    ">
-                    Kg
-                </span>
+            <div class="input-satuan">
+                <input type="number" id="kgPerKarung" value="20">
+                <span>Kg</span>
             </div>
 
             <label>Harga per Kg</label>
-            <input type="number" id="hargaKg" value="10000">
+            <div class="input-satuan">
+                <input type="number" id="hargaKg" value="10000">
+                <span>Rp</span>
+            </div>
 
             <button onclick="hitungJagung()">Hitung Jagung</button>
             <div id="hasilJagung" class="hasil">Hasil jagung muncul di sini.</div>
@@ -91,73 +80,30 @@
 
             <div id="inputLangsung">
                 <label>Luas Tanah</label>
-
-                <div style="display:flex; align-items:center;">
-                    <input type="number" id="luasTanah" placeholder="Contoh: 100" style="border-radius:12px 0 0 12px;">
-
-                    <span style="
-            padding:13px 15px;
-            background:#f0f0f0;
-            border:1px solid #ddd;
-            border-left:none;
-            border-radius:0 12px 12px 0;
-            font-weight:bold;
-        ">
-                        m²
-                    </span>
+                <div class="input-satuan">
+                    <input type="number" id="luasTanah" placeholder="Contoh: 100">
+                    <span>m²</span>
                 </div>
             </div>
 
             <div id="inputPerkalian" class="hidden">
-                <label>Panjang meter Tanah </label>
-                <div style="display:flex; align-items:center;">
-                    <input type="number" id="panjangTanah" placeholder="Contoh: 20"
-                        style="border-radius:12px 0 0 12px;">
-
-                    <span style="
-        padding:13px 15px;
-        background:#f0f0f0;
-        border:1px solid #ddd;
-        border-left:none;
-        border-radius:0 12px 12px 0;
-        font-weight:bold;
-    ">
-                        Meter
-                    </span>
+                <label>Panjang Tanah</label>
+                <div class="input-satuan">
+                    <input type="number" id="panjangTanah" placeholder="Contoh: 20">
+                    <span>Meter</span>
                 </div>
-                <label>Lebar meter Tanah</label>
-                <div style="display:flex; align-items:center;">
-                    <input type="number" id="lebarTanah" placeholder="Contoh: 10" style="border-radius:12px 0 0 12px;">
 
-                    <span style="
-        padding:13px 15px;
-        background:#f0f0f0;
-        border:1px solid #ddd;
-        border-left:none;
-        border-radius:0 12px 12px 0;
-        font-weight:bold;
-    ">
-                        Meter
-                    </span>
+                <label>Lebar Tanah</label>
+                <div class="input-satuan">
+                    <input type="number" id="lebarTanah" placeholder="Contoh: 10">
+                    <span>Meter</span>
                 </div>
             </div>
 
             <label>Harga per Meter²</label>
-            <label>Harga per Meter²</label>
-
-            <div style="display:flex; align-items:center;">
-                <input type="number" id="hargaTanah" value="60000" style="border-radius:12px 0 0 12px;">
-
-                <span style="
-        padding:13px 15px;
-        background:#f0f0f0;
-        border:1px solid #ddd;
-        border-left:none;
-        border-radius:0 12px 12px 0;
-        font-weight:bold;
-    ">
-                    Rp
-                </span>
+            <div class="input-satuan">
+                <input type="number" id="hargaTanah" value="60000">
+                <span>Rp</span>
             </div>
 
             <button onclick="hitungTanah()">Hitung Tanah</button>
@@ -165,13 +111,16 @@
         </section>
 
         <section id="makanan" class="card hidden">
-            <h2>🍚 Kalkulator Makanan (Hanya Beras) 1 Minggu</h2>
+            <h2>🍚 Kalkulator Makanan Beras 1 Minggu</h2>
 
             <label>Jumlah Anggota Keluarga</label>
             <input type="number" id="jumlahOrang" placeholder="Contoh: 5">
 
-            <label>Konsumsi Beras per Orang per Hari (kg)</label>
-            <input type="number" id="berasPerOrang" value="0.3" step="0.1">
+            <label>Konsumsi Beras per Orang per Hari</label>
+            <div class="input-satuan">
+                <input type="number" id="berasPerOrang" value="0.3" step="0.1">
+                <span>Kg</span>
+            </div>
 
             <label>Harga Beras per Kg</label>
             <select id="hargaBeras">
@@ -181,16 +130,12 @@
             </select>
 
             <button onclick="hitungMakanan()">Hitung Makanan</button>
-
-            <div id="hasilMakanan" class="hasil">
-                Hasil makanan muncul di sini.
-            </div>
+            <div id="hasilMakanan" class="hasil">Hasil makanan muncul di sini.</div>
         </section>
 
-
         <section id="ternak" class="card hidden">
-            <h2>🐷 Kalkulator Ternak</h2>
-            <p>Menu ini belum dibuat. Nanti kita isi babi, sapi, kambing.</p>
+            <h2>🐮 Kalkulator Ternak</h2>
+            <p>untuk ternak blm dapat perhitungnya jadi kom buat manual saja dulu k eew</p> 
         </section>
 
     </main>
