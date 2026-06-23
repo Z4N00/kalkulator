@@ -9,7 +9,13 @@ jenisJagung.addEventListener("change", function () {
 });
 
 jenisTanah.addEventListener("change", function () {
-  hargaTanah.value = jenisTanah.value;
+  if (jenisTanah.value === "manual") {
+    hargaTanah.value = "";
+    hargaTanah.placeholder = "Masukkan harga sendiri";
+    hargaTanah.focus();
+  } else {
+    hargaTanah.value = jenisTanah.value;
+  }
 });
 
 function bukaMenu(menu) {
@@ -78,7 +84,11 @@ function hitungTanah() {
   }
 
   let nilaiTanah = luas * harga;
-  let namaTanah = jenisTanah.options[jenisTanah.selectedIndex].text;
+
+  let namaTanah =
+    jenisTanah.value === "manual"
+      ? "Harga tanah sesuai input sendiri"
+      : jenisTanah.options[jenisTanah.selectedIndex].text;
 
   document.getElementById("hasilTanah").innerHTML = `
     <b>Jenis Lokasi:</b> ${namaTanah}<br>
@@ -113,6 +123,6 @@ function hitungMakanan() {
       ${rupiah(totalBiayaBeras)}
     </span>
     <br><br>
-    <small><b>Catatan:</b> Belum termasuk Lauk, sayur, atau kebutuhan makanan lainnya dalam 1 minggu jadi ditambahkan sendiri saja eww.</small>
+    <small><b>Catatan:</b> Belum termasuk lauk, sayur, atau kebutuhan makanan lainnya dalam 1 minggu, jadi bisa ditambahkan sendiri.</small>
   `;
 }
